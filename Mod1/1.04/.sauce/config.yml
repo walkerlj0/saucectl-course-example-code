@@ -21,12 +21,5 @@ suites:
   browser: chrome
   config:
     testFiles: ['**/example.test.js']
-
-- name: login test
-  browser: chrome
-  platformName: "Windows 10"
-  screenResolution: 2560x1600
-  config:
-    testFiles: ['**/login.spec.js']
 docker:
   fileTransfer: mount
