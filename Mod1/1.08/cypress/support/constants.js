@@ -3,7 +3,7 @@ export const LOGIN_USERS ={
     username: 'locked_out_user',
     password: 'secret_sauce',
   },
-  STANDARD {
+  STANDARD: {
     username: 'standard_user',
     password: 'secret_sauce',
   },

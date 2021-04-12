@@ -16,14 +16,18 @@ cypress:
   version: 5.6.0
   record: false
   key: ""
+
 suites:
-- name: saucy test
+- name: example test
   browser: chrome
   config:
-    testFiles:
-    - '**/*.*'
-    env:
-      hello: world
+    testFiles: ['**/example.test.js']
+
+- name: login test
+  browser: chrome
+  platformName: "Windows 10"
   screenResolution: 2560x1600
+  config:
+    testFiles: ['**/login.spec.js']
 docker:
   fileTransfer: mount
