@@ -1,0 +1,28 @@
+apiVersion: v1alpha
+kind: cypress
+showconsolelog: false
+sauce:
+  region: us-west-1
+  metadata:
+    name: Testing Cypress Support
+    tags:
+    - e2e
+    - release team
+    - other tag
+    build: Cypress Sample Test Build – $DATE
+  # tunnel:
+  #   id: walkerlj0_tunnel_id
+  concurrency: 10
+cypress:
+  configFile: cypress.json
+  version: 5.6.0
+  record: false
+  key: ""
+suites:
+- name: login test
+  browser: chrome
+  config:
+    testFiles:
+    - '**/login.spec.js'
+docker:
+  fileTransfer: mount
