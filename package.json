@@ -1,0 +1,28 @@
+{
+  "name": "testrunner-course-example-code",
+  "version": "1.0.0",
+  "description": "Test code examples for the TestRunner Toolkit Course",
+  "main": "index.js",
+  "scripts": {
+    "test": "saucectl run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spider-sauce/testrunner-course-example-code.git"
+  },
+  "keywords": [
+    "cypress",
+    "saucectl",
+    "testrunner-toolkit"
+  ],
+  "author": "Lindsay J Walker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spider-sauce/testrunner-course-example-code/issues"
+  },
+  "homepage": "https://github.com/spider-sauce/testrunner-course-example-code#readme",
+  "dependencies": {
+    "cypress": "7.1.0",
+    "saucectl": "0.37.1"
+  }
+}
