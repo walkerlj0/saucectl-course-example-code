@@ -12,5 +12,5 @@ RUN sudo apt-get update \
   && sudo rm -rf /var/lib/apt/lists/*
 
 # Install Node/NPM
-RUN sudo apt-get install -y npm \
-  && sudo apt-get install -y build-essential
+# RUN sudo apt-get install -y npm \
+# && sudo apt-get install -y build-essential
