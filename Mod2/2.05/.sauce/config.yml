@@ -1,28 +1,35 @@
 apiVersion: v1alpha
 kind: cypress
 showconsolelog: false
+rootDir: ./
 sauce:
   region: us-west-1
+  tunnel:
+    id: walkerlj0_tunnel_id
   metadata:
     name: Testing Cypress Support
     tags:
     - e2e
     - release team
     - other tag
-    build: Cypress Sample Test Build – $DATE
-  # tunnel:
-  #   id: walkerlj0_tunnel_id
-  concurrency: 10
+    build: Release $CI_COMMIT_SHORT_SHA
+  concurrency: 1
 cypress:
   configFile: cypress.json
   version: 5.6.0
   record: false
   key: ""
 suites:
-- name: login test
+- name: example test
   browser: chrome
   config:
-    testFiles:
-    - '**/login.spec.js'
+    testFiles: ['**/example.test.js']
+
+- name: login test
+  browser: chrome
+  platformName: "Windows 10"
+  screenResolution: 2560x1600
+  config:
+    testFiles: ['**/login.spec.js']
 docker:
   fileTransfer: mount

@@ -1,0 +1,30 @@
+name: Sauce Cypress Pipeline Demo Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+env:
+  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
+  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
+  SAUCECTL_VERSION: "0.37.0"
+  BUILD_PREFIX: true
+
+jobs:
+  build-web-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Dependencies
+        run: |
+          npm install
+      - name: Run Build
+        env:
+          CI: false
+        run: |
+          npm run build
