@@ -6,7 +6,7 @@ node_modules/
 geckodriver
 chromedriver
 yarn.lock
-package-lock.json
+*package-lock.json
 */chromedriver
 
 ## Python Files
