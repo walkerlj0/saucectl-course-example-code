@@ -15,3 +15,6 @@ cypress/screenshots/
 cypress/videos/*
 cypress/videos
 package-lock.json
+
+Users/.fileloc
+*/Users/.fileloc

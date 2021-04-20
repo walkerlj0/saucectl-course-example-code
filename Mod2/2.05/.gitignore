@@ -35,3 +35,6 @@ cypress/videos
 package-lock.json
 __assets__/*
 __assets__/**
+Users/.fileloc
+*/Users/.fileloc
+
