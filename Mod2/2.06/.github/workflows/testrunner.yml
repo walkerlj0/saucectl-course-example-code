@@ -1,0 +1,61 @@
+name: Sauce Cypress Pipeline Demo Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+env:
+  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
+  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
+  SAUCECTL_VERSION: "0.37.0"
+  BUILD_PREFIX: true
+
+jobs:
+  build-web-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Dependencies
+        run: |
+          npm install
+      - name: Run Build
+        env:
+          CI: false
+        run: |
+          npm run build
+
+  test-web-app:
+    runs-on: ubuntu-latest
+    needs: build-web-app
+    steps:
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Checkout Github App Code
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          npm install
+      - name: Run Build
+        env:
+          CI: false
+        run: |
+          npm run build
+      - name: Download & Use Sauce Connect Tunnel
+        run: |
+          set -e
+          curl -L -s https://saucelabs.com/downloads/sc-4.6.4-linux.tar.gz | sudo tar -xvz
+          sc-4.6.4-linux/bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -i proxy-tunnel-$GITHUB_RUN_ID &
+      - name: Install Saucectl
+        run: |
+          curl -L -s https://github.com/saucelabs/saucectl/releases/download/v${SAUCECTL_VERSION}/saucectl_${SAUCECTL_VERSION}_linux_64-bit.tar.gz | sudo tar -xvz -C /usr/bin/
+      - name: Saucectl Run
+        run: |
+          cd build/ && python3 -m http.server 8000 &
+          saucectl run -c ./.sauce/config.yml --tunnel-id proxy-tunnel-$GITHUB_RUN_ID --test-env sauce
