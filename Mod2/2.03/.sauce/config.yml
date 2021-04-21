@@ -1,6 +1,9 @@
 apiVersion: v1alpha
 kind: cypress
 showconsolelog: false
+rootDir: ./
+defaults:
+  mode: docker
 sauce:
   region: us-west-1
   tunnel: walkerlj0_tunnel_id

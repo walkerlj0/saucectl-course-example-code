@@ -1,7 +1,9 @@
 apiVersion: v1alpha
 kind: cypress
-rootDir: ./
 showconsolelog: false
+rootDir: ./
+defaults:
+  mode: docker
 sauce:
   region: us-west-1
   metadata:
