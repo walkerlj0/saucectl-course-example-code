@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.5440" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-07-13T18:57:17" tests="0" file="cypress/integration/smoke/login.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="LoginPage" timestamp="2021-07-13T18:57:17" tests="3" time="6.5440" failures="0">
+    <testcase name="LoginPage should be able to test loading of login page" time="3.4520" classname="should be able to test loading of login page">
+    </testcase>
+    <testcase name="LoginPage should be able to login with a standard user" time="1.8500" classname="should be able to login with a standard user">
+    </testcase>
+    <testcase name="LoginPage should not be able to login with a locked user" time="1.2420" classname="should not be able to login with a locked user">
+    </testcase>
+  </testsuite>
+</testsuites>

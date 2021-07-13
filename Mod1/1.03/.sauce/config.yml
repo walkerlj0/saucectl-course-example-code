@@ -12,19 +12,12 @@ cypress:
   record: false
   key: ""
 suites:
-- name: cypress - windows 10 - chrome smoke
+- name: cypress - windows 10 - chrome
   browser: chrome
   platformName: windows 10
   config:
     testFiles:
-    - 'smoke/*.spec.*'
-  mode: sauce
-- name: cypress - windows 10 - chrome regression
-  browser: chrome
-  platformName: windows 10
-  config:
-    testFiles:
-      ['regression/*.test.*']
+    - '**/*.*'
   mode: sauce
 rootDir: .
 artifacts:

@@ -1,3 +1,15 @@
+**/assets
+/examples/
+/artifacts/
+cypress/videos/
+cypress/results/
+cypress/screenshots/
+
+.gitpod.yml
+.gitpod.Dockerfile
+**/.gitpod.yml
+**/.gitpod.Dockerfile
+
 **/Gemfile
 **/Gemfile.lock
 **/.ruby-version

@@ -1,0 +1,24 @@
+[
+  {
+    "status": "info",
+    "message": "Actions",
+    "screenshot": null
+  },
+  {
+    "id": 1,
+    "screenshot": 0,
+    "HTTPStatus": 200,
+    "suggestion": null,
+    "statusCode": 0,
+    "path": ".type() - type into a DOM element",
+    "between_commands": 7230,
+    "result": {
+      "status": "passed",
+      "failure_reason": "{}"
+    },
+    "request": {
+      "body": "() => {\n    // https://on.cypress.io/type\n    cy.get('.action-email').type('fake@email.com').should('have.value', 'fake@email.com');\n  }"
+    },
+    "in_video_timeline": 0
+  }
+]

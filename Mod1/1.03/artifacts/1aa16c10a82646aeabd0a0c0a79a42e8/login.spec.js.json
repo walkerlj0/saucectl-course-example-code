@@ -1,0 +1,58 @@
+[
+  {
+    "status": "info",
+    "message": "LoginPage",
+    "screenshot": null
+  },
+  {
+    "id": 1,
+    "screenshot": 0,
+    "HTTPStatus": 200,
+    "suggestion": null,
+    "statusCode": 0,
+    "path": "should be able to test loading of login page",
+    "between_commands": 583,
+    "result": {
+      "status": "passed",
+      "failure_reason": "{}"
+    },
+    "request": {
+      "body": "() => {\n    _LoginPage.default.screen.should('be.visible');\n  }"
+    },
+    "in_video_timeline": 0
+  },
+  {
+    "id": 2,
+    "screenshot": 0,
+    "HTTPStatus": 200,
+    "suggestion": null,
+    "statusCode": 0,
+    "path": "should be able to login with a standard user",
+    "between_commands": 1359,
+    "result": {
+      "status": "passed",
+      "failure_reason": "{}"
+    },
+    "request": {
+      "body": "() => {\n    _LoginPage.default.signIn(_constants.LOGIN_USERS.STANDARD);\n\n    _SwagOverviewPage.default.screen.should('be.visible');\n  }"
+    },
+    "in_video_timeline": 0
+  },
+  {
+    "id": 3,
+    "screenshot": 0,
+    "HTTPStatus": 200,
+    "suggestion": null,
+    "statusCode": 0,
+    "path": "should not be able to login with a locked user",
+    "between_commands": 905,
+    "result": {
+      "status": "passed",
+      "failure_reason": "{}"
+    },
+    "request": {
+      "body": "() => {\n    _LoginPage.default.signIn(_constants.LOGIN_USERS.LOCKED);\n\n    _LoginPage.default.errorMessage.should('have.text', 'Epic sadface: Sorry, this user has been locked out.');\n  }"
+    },
+    "in_video_timeline": 0
+  }
+]
