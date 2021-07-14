@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="1.6640" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2021-07-13T18:58:21" tests="0" file="cypress/integration/example.test.js" time="0.0000" failures="0">
-  </testsuite>
-  <testsuite name="Actions" timestamp="2021-07-13T18:58:22" tests="1" time="1.6640" failures="0">
-    <testcase name="Actions .type() - type into a DOM element" time="1.6640" classname=".type() - type into a DOM element">
-    </testcase>
-  </testsuite>
-</testsuites>

@@ -1,4 +1,5 @@
 **/assets
+**/**/assets
 /examples/
 /artifacts/
 cypress/videos/
