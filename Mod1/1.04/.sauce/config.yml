@@ -1,6 +1,7 @@
 apiVersion: v1alpha
 kind: cypress
-defaults: {}
+defaults:
+  mode: docker
 showconsolelog: false
 sauce:
   region: us-west-1
@@ -13,18 +14,32 @@ cypress:
   key: ""
 suites:
 - name: cypress - windows 10 - chrome smoke
+  mode: sauce
   browser: chrome
   platformName: windows 10
   config:
     testFiles:
     - 'smoke/*.spec.*'
-  mode: sauce
 - name: cypress - windows 10 - chrome regression
   browser: chrome
   platformName: windows 10
   config:
     testFiles:
       ['regression/*.test.*']
+- name: cypress - windows 10 - firefox - all
+  browser: firefox
+  browserVersion: 86.0
+  platformName: windows 10
+  config:
+    testFiles:
+      - '**/*.*'
+- name: cypress - windows 10 - edge -all
+  browser: microsoftedge
+  browserVersion: 90.0
+  platformName: windows 10
+  config:
+    testFiles:
+      - '**/*.*'
   mode: sauce
 rootDir: .
 artifacts:

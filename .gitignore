@@ -4,6 +4,8 @@
 cypress/videos/
 cypress/results/
 cypress/screenshots/
+**/artifacts
+**/**/artifacts
 
 .gitpod.yml
 .gitpod.Dockerfile
